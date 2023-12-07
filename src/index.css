@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css2?family=Dhurjati&display=swap');
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root{
+  --font-family: "Roboto", sans-serif;
+  --prime: rgb(144, 0, 255);
+  --border: rgb(200, 200, 200);
+  --black: #000;
+  --white: #fff;
+
+}
+body{
+  font-family : var(--font-family);
+}
+
+ul,ol{
+  list-style: none;
+}
+a{
+  text-decoration: none;
+}
+
+.container{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  min-height: 100vh;
+  background: url("https://eapi.pcloud.com/getpubthumb?code=XZCwcDZeUGEv3ekdvYLWiDQ9vNsMLJ1fxKX&linkpassword=undefined&size=1536x864&crop=0&type=auto")  center center no-repeat;
+  background-size: cover;
+  padding-top: 20px;
+}
+.container_wrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 400px;
+  padding: 20px 30px;
+
+
+
+  background: rgba(255, 255, 255, 0.063);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(9.1px);
+  -webkit-backdrop-filter: blur(9.1px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+
+}
+.wrapper_item{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 100%;
+
+  margin-top: 20px;
+
+}
+
+/* Hide the default checkbox */
+.chechbox_con input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+ }
+ 
+ .chechbox_con {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  font-size: 20px;
+  user-select: none;
+  height: 1.3em;
+  width: 1.3em;
+ }
+ 
+ /* Create a custom checkbox */
+ .checkmark {
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 1.3em;
+  width: 1.3em;
+  background-color: #343434;
+  border-radius: 5px;
+  transition: all 0.5s;
+ }
+ 
+ /* When the checkbox is checked, add a blue background */
+ .chechbox_con input:checked ~ .checkmark {
+  background-color: #f0f0f0;
+  border: 2px solid #343434;
+ }
+ 
+ /* Create the checkmark/indicator (hidden when not checked) */
+ .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+  filter: drop-shadow(0 0 10px #888);
+ }
+ 
+ /* Show the checkmark when checked */
+ .chechbox_con input:checked ~ .checkmark:after {
+  display: block;
+ }
+ 
+ /* Style the checkmark/indicator */
+ .chechbox_con .checkmark:after {
+  left: 0.3em;
+  top: 0.05em;
+  width: 0.3em;
+  height: 0.65em;
+  border: solid #343434;
+  border-width: 0 0.2em 0.2em 0;
+  border-radius: 4px;
+  transform: rotate(45deg);
+  animation: bounceFadeIn 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+ }
+ 
+ @keyframes bounceFadeIn {
+  from {
+   transform: translate(0, -10px) rotate(45deg);
+   opacity: 0;
+  }
+ 
+  to {
+   transform: translate(0, 0) rotate(45deg);
+   opacity: 1;
+  }
+ }
+
+ .plusButton {
+  /* Config start */
+  --plus_sideLength: 2rem;
+  --plus_topRightTriangleSideLength: 0.6rem;
+  /* Config end */
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid white;
+  width: var(--plus_sideLength);
+  height: var(--plus_sideLength);
+  background-color: #00000000;
+  overflow: hidden;
+}
+
+.plusButton::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-width: 0 var(--plus_topRightTriangleSideLength) var(--plus_topRightTriangleSideLength) 0;
+  border-style: solid;
+  border-color: transparent white transparent transparent;
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.2s;
+}
+
+.plusButton:hover {
+  cursor: pointer;
+}
+
+.plusButton:hover::before {
+  --plus_topRightTriangleSideLength: calc(var(--plus_sideLength) * 2);
+}
+
+.plusButton:focus-visible::before {
+  --plus_topRightTriangleSideLength: calc(var(--plus_sideLength) * 2);
+}
+
+.plusButton>.plusIcon {
+  fill: rgb(67, 67, 67);
+  width: calc(var(--plus_sideLength) * 0.7);
+  height: calc(var(--plus_sideLength) * 0.7);
+  z-index: 1;
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.2s;
+}
+
+.plusButton:hover>.plusIcon {
+  fill: black;
+  transform: rotate(180deg);
+}
+
+.plusButton:focus-visible>.plusIcon {
+  fill: black;
+  transform: rotate(180deg);
+}
+  
+.edit_sec{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.edit_sec button:last-child{
+  margin-left: 10px;
+  display: flex;
+  justify-content: center !important;
+  align-items: center !important;
+}
+.ui-btn {
+  cursor: pointer;
+  border-radius: 5px;
+  color: rgb(219, 218, 218);
+  border-style: solid;
+  background-color: transparent;
+  border-color: rgb(219, 218, 218);
+
+  width: 32px;
+  height: 32px;
+  transition: 0.2s ease;
+  text-transform: uppercase;
+  border-width: 2px;
+  font-weight: 500;
+  font-size: 18px;
+  letter-spacing: 2px;
+}
+.ui-btn:hover {
+  color: rgb(247, 247, 247);
+  background-color: rgb(202, 25, 25);
+  border-color: rgb(202, 25, 25);
+  text-shadow: 0 0 50px white, 0 0 20px white, 0 0 15px white;
+  box-shadow: 0 0 50px rgba(202, 25, 25, 0.562), 0 0 30px rgb(202, 25, 25),
+    0 0 60px rgb(202, 25, 25), 0 0 120px rgb(202, 25, 25);
+  font-size: 20px;
+
+  letter-spacing: 3px;
+}
+.ui-btn:active {
+  width: 33px;
+  height: 32px;
+  letter-spacing: 0px;
+}
